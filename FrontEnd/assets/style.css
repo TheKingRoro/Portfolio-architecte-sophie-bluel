@@ -401,7 +401,7 @@ header,
   color: rgb(249, 240, 240);
 }
 
-.add-remove {
+.submit {
   display: flex;
   flex-direction: column;
   justify-content: center;

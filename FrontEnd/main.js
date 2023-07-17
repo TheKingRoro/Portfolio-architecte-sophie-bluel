@@ -1,16 +1,16 @@
 //WORKS & Galeries
 const reponseWorks = await fetch("http://localhost:5678/api/works");
 const works = await reponseWorks.json();
-console.log(works);
+//console.log(works);
 
 function genererWorks(works) {
   for (let j = 0; j < works.length; j++) {
-    const work = works[j];
-    console.log(work);
+    //const work = works[j];
+    //console.log(work);
     const sectionWork = document.querySelector(".gallery");
     const elementWork = document.createElement("figure");
-    const idWork = elementWork.setAttribute("id", `${works[j].categoryId}`);
-    console.log(idWork);
+    elementWork.setAttribute("id", `${works[j].categoryId}`);
+    //console.log(idWork);
     const imageWork = document.createElement("img");
     imageWork.src = works[j].imageUrl;
     imageWork.alt = works[j].title;
@@ -20,11 +20,20 @@ function genererWorks(works) {
     elementWork.appendChild(imageWork);
     elementWork.appendChild(titleWork);
   }
+}
+
+genererWorks(works);
+
+//HABILLAGE GALLERIE
+
+function genererWorksGallery(works) {
+  //traitement dans modal-container
+  const sectionWorkModal = document.querySelector(".modal-container");
 
   for (let z = 0; z < works.length; z++) {
     const workModal = works[z];
-    console.log(workModal);
-    const sectionWorkModal = document.querySelector(".gallery-modal");
+    //console.log(workModal);
+
     const elementWorkModal = document.createElement("figure");
     //Id
     const idWorkModal = elementWorkModal.setAttribute(
@@ -45,16 +54,22 @@ function genererWorks(works) {
     elementWorkModal.appendChild(imageWorkModal);
     elementWorkModal.appendChild(titleWorkModal);
   }
+  //Ajout class css gallery-modal
+  sectionWorkModal.classList.add("gallery-modal");
 
   //Création bouton
-  const buttonWork = document.querySelector(".add-remove");
+  const buttonWork = document.querySelector(".submit");
   const addButton = document.createElement("button");
   addButton.classList.add(`button-add`);
   addButton.textContent = "Ajouter une photo";
   buttonWork.appendChild(addButton);
 }
 
-genererWorks(works);
+document.querySelector("#project-btn").addEventListener("click", () => {
+  //nettoyage de modal container
+  document.querySelector(".modal-container").innerHTML("");
+  genererWorksGallery(works);
+});
 
 //CATEGORIES & Filtres
 const reponseCategories = await fetch("http://localhost:5678/api/categories");
