@@ -273,7 +273,7 @@ footer nav ul {
   height: 60px;
 }
 
-/**CSS ajouté**/
+/*CATEGORIES*/
 .filtres {
   display: flex;
   justify-content: center;
@@ -311,6 +311,8 @@ a:hover {
   color: #b1663c;
 }
 
+/*LOGIN*/
+
 body,
 header,
 .login-main {
@@ -333,7 +335,7 @@ header,
   text-decoration: none;
 }
 
-/*MODALE ajout photo*/
+/***MODAL GALERIE***/
 .modal {
   display: flex;
   flex-direction: column;
@@ -382,17 +384,22 @@ header,
 .gallery-modal {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
   padding: 0 10% 10% 10%;
-}
-
-.gallery-modal img {
-  width: 90px;
-  height: 110px;
 }
 
 .gallery-modal figure {
   display: flex;
   flex-direction: column;
+}
+
+.gallery-modal img {
+  width: 100%;
+  height: auto;
+}
+
+.gallery-modal a {
+  text-align: left;
 }
 
 .modal-content hr {
@@ -401,27 +408,30 @@ header,
   color: rgb(249, 240, 240);
 }
 
-.submit {
+/*Boutons modal galerie*/
+.add-remove {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
 }
 
 .button-add {
-  color: white;
-  background-color: #1d6154;
+  width: 25%;
+  height: 36px;
   border-radius: 50px;
-  width: 200px;
-  height: 30px;
+  background-color: #1d6154;
+  color: white;
 }
 
-ul .remove {
+.button-remove {
+  width: 25%;
+  height: 36px;
   border: none;
   background-color: transparent;
   color: red;
 }
+
+/*BANNER LOGIN*/
 .login-banner {
   display: none;
 }

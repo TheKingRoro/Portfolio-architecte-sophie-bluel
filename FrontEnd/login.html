@@ -12,7 +12,7 @@
     />
     <meta name="description" content="" />
     <link rel="stylesheet" href="./assets/style.css" />
-    <script type="module" src="main.js"></script>
+    <script type="module" src="gallery.js"></script>
   </head>
 
   <body>
@@ -32,17 +32,12 @@
 
     <main action="index.html" class="login-main" id="contact">
       <h2>Log in</h2>
-      <form id="login-form" name="loginForm">
-        <label for="email">Email</label>
+      <form id="login-form" class="connect" name="loginForm">
+        <label>Email</label>
         <input type="email" name="email" id="email" />
-        <label for="name">Mot de passe</label>
+        <label>Mot de passe</label>
         <input type="password" name="password" id="password" />
-        <input
-          class="connect"
-          type="submit"
-          value="Se connecter"
-          id="login-form-submit"
-        />
+        <button>Se connecter</button>
       </form>
       <a class="forgot-password" href="passname">Mot de passe oublié</a>
     </main>
